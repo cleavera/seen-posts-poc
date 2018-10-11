@@ -5,13 +5,15 @@ import { AppComponent } from './components/app/app.component';
 import { PostComponent } from './components/post/post.component';
 import { PostsComponent } from './components/posts/posts.component';
 import { OverflowDirective } from './directives/overflow/overflow.directive';
+import { SeenDirective } from './directives/seen/seen.directive';
 
 @NgModule({
     declarations: [
         AppComponent,
         OverflowDirective,
         PostComponent,
-        PostsComponent
+        PostsComponent,
+        SeenDirective
     ],
     imports: [
         BrowserModule,

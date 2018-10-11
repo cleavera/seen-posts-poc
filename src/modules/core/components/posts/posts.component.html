@@ -1,1 +1,1 @@
-<core-post *ngFor="let seen of posts" [corePostSeen]="seen"></core-post>
+<core-post *ngFor="let post of posts; index as i;" [corePostHeight]="post.height" [corePostSeen]="post.seen" (core-seen)="hasBeenSeen(i)"></core-post>

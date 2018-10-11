@@ -9,7 +9,7 @@ import { OverflowDirective } from '../../directives/overflow/overflow.directive'
 })
 export class PostsComponent {
     public static readonly PAGE_SIZE: number = 20;
-    public posts: Array<boolean>;
+    public posts: Array<{ seen: boolean, height: number }>;
 
     constructor(overflowContainer: OverflowDirective) {
         this.posts = [];
@@ -19,13 +19,15 @@ export class PostsComponent {
                 this.addMore();
             }
         });
+    }
 
-        this.addMore();
+    public hasBeenSeen(index: number): void {
+        this.posts[index].seen = true;
     }
 
     public addMore(): void {
         for (let x: number = 0; x < PostsComponent.PAGE_SIZE; x++) {
-            this.posts.push(false);
+            this.posts.push({ seen: false, height: Math.round(1000 * Math.random()) });
         }
     }
 }

@@ -1,6 +1,10 @@
 :host {
+  align-items: center;
   background: #f99;
-  display: block;
+  display: flex;
+  font-family: sans-serif;
+  font-size: 3rem;
+  justify-content: center;
   min-height: 100px;
 
   &.is-seen {
